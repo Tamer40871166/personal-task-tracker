@@ -1,7 +1,8 @@
 
-// Add New Task Functionality
+// Personal Task Tracker
 
 function addTask() {
+
     const input = document.getElementById("taskInput");
     const task = input.value.trim();
 
@@ -15,11 +16,20 @@ function addTask() {
     const taskText = document.createElement("span");
     taskText.textContent = task;
 
+    // Complete button
     const completeButton = document.createElement("button");
     completeButton.textContent = "Complete";
 
     completeButton.addEventListener("click", function () {
+
         listItem.classList.toggle("completed");
+
+        if (listItem.classList.contains("completed")) {
+            completeButton.textContent = "Undo";
+        } else {
+            completeButton.textContent = "Complete";
+        }
+
     });
 
     listItem.appendChild(taskText);
@@ -30,5 +40,7 @@ function addTask() {
     input.value = "";
 }
 
-document.getElementById("addButton")
-    .addEventListener("click", addTask);
+// Connect Add Task button
+document.getElementById("addButton").addEventListener("click", addTask);
+
+console.log("Task Manager JavaScript loaded successfully!");
