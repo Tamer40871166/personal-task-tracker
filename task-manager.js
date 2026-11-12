@@ -3,7 +3,6 @@
 // Add, Complete and Delete Tasks
 
 function addTask() {
-
     const input = document.getElementById("taskInput");
     const task = input.value.trim();
 
@@ -22,15 +21,12 @@ function addTask() {
     completeButton.textContent = "Complete";
 
     completeButton.addEventListener("click", function () {
-
         listItem.classList.toggle("completed");
 
-        if (listItem.classList.contains("completed")) {
-            completeButton.textContent = "Undo";
-        } else {
-            completeButton.textContent = "Complete";
-        }
-
+        completeButton.textContent =
+            listItem.classList.contains("completed")
+                ? "Undo"
+                : "Complete";
     });
 
     // Delete button
