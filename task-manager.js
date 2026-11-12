@@ -1,5 +1,6 @@
 
 // Personal Task Tracker
+// Add and Complete Tasks
 
 function addTask() {
 
@@ -41,6 +42,7 @@ function addTask() {
 }
 
 // Connect Add Task button
-document.getElementById("addButton").addEventListener("click", addTask);
+document.getElementById("addButton")
+    .addEventListener("click", addTask);
 
-console.log("Task Manager JavaScript loaded successfully!");
+console.log("Task Manager loaded successfully!");
