@@ -1,6 +1,6 @@
 
 // Personal Task Tracker
-// Add and Complete Tasks
+// Add, Complete and Delete Tasks
 
 function addTask() {
 
@@ -33,8 +33,17 @@ function addTask() {
 
     });
 
+    // Delete button
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+
+    deleteButton.addEventListener("click", function () {
+        listItem.remove();
+    });
+
     listItem.appendChild(taskText);
     listItem.appendChild(completeButton);
+    listItem.appendChild(deleteButton);
 
     document.getElementById("taskList").appendChild(listItem);
 
